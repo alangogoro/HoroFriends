@@ -10,15 +10,15 @@ import SnapKit
 import SwiftyGif
 import Alamofire
 
-class ViewController: UIViewController {
+class FortuneViewController: UIViewController {
     
     // MARK: - Properties
     let lauchImageView = LaunchingAnimationView()
     
     private let statusBar: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red:   169/255,//R199
-                                       green: 207/255,//G237
+        view.backgroundColor = UIColor(red:   199/255,//R199
+                                       green: 237/255,//G237
                                        blue:  255/255,//B255
                                        alpha: 1.0)
         return view
@@ -101,8 +101,8 @@ class ViewController: UIViewController {
         
         view.addSubview(statusBar)
         statusBar.snp.makeConstraints { make in
-            make.height.equalTo(50)
             make.top.left.right.equalTo(self.view)
+            make.height.equalTo(45)
         }
         
         view.addSubview(leftBackground)
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - SwiftyGifDelegate
-extension ViewController: SwiftyGifDelegate {
+extension FortuneViewController: SwiftyGifDelegate {
     func gifDidStop(sender: UIImageView) {
         lauchImageView.isHidden = true
         //view.backgroundColor = UIColor(named: "launch color")

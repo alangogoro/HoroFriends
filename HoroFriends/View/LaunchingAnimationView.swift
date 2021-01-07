@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyGif
+import SnapKit
 
 class LaunchingAnimationView: UIView {
     
@@ -34,7 +35,16 @@ class LaunchingAnimationView: UIView {
     
     // MARK: - Helpers
     private func configure() {
-        // launching gifImageView layout
+        
+        // GifImageView layout w/ SnapKit
+        addSubview(gifImageView)
+        gifImageView.snp.makeConstraints { make in
+            make.center.equalToSuperview().priority(.required)
+            make.size.equalTo(CGSize(width: 375, height: 812))
+        }
+
+        /*
+        // GifImageView layout w/out SnapKit
         addSubview(gifImageView)
         gifImageView.translatesAutoresizingMaskIntoConstraints = false
         gifImageView.centerXAnchor
@@ -45,5 +55,6 @@ class LaunchingAnimationView: UIView {
             .constraint(equalToConstant: 375).isActive = true
         gifImageView.heightAnchor
             .constraint(equalToConstant: 812).isActive = true
+         */
     }
 }

@@ -8,6 +8,9 @@
 let SESSION_TOKEN = "iGYGa4nkNetgOiFb2zIDDarOzEAi50zn"
 let FB_ID = ""
 let APPLE_ID = ""
+let OS_IOS = 1
+
+let DOMAIN = "https://horofriend88.com/"
 
 /**
  **粗體** *斜體* 一般文字
